@@ -1,10 +1,10 @@
 {
 
   "manifest_version": 2,
-  "name": "No Premieres",
+  "name": "No YouTube Premieres",
   "version": "1.0",
 
-  "description": "Hides Premieres from the subscription page.",
+  "description": "Hides Premieres from the YouTube subscription page.",
 
   "icons": {
     "48": "icons/48.png",
