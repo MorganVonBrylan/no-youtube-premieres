@@ -1,6 +1,6 @@
-	"use strict";
+"use strict";
 
-const observer = new MutationObserver(mutations => {
+const observer = new MutationObserver(() => {
 	if(!location.pathname.includes("/subscriptions"))
 		return;
 
