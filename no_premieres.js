@@ -12,7 +12,8 @@ const observer = new MutationObserver(mutations => {
 	// new UI
 	for(const card of document.getElementsByTagName("ytd-rich-item-renderer"))
 	{
-		if(!card.querySelector("#time-status").textContent.match("[0-9]:[0-9]{2}"))
+		const time = card.querySelector("#time-status");
+		if(time && !time.textContent.match("[0-9]:[0-9]{2}"))
 		{
 			const row = card.closest("ytd-rich-grid-row");
 			card.remove();
