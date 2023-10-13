@@ -31,6 +31,8 @@ function shiftItems(fromRow)
 	let next = current.nextElementSibling;
 	while(next.tagName === "YTD-RICH-GRID-ROW")
 	{
+		if(!next.offsetParent) // if it's not visible
+			return;
 		const nextFirst = next.querySelector("#contents > ytd-rich-item-renderer");
 		current.querySelector("#contents").appendChild(nextFirst);
 		current = next;
