@@ -4,12 +4,6 @@ const observer = new MutationObserver(() => {
 	if(!location.pathname.includes("/subscriptions"))
 		return;
 
-	// old UI
-	for(const card of document.getElementsByTagName("ytd-grid-video-renderer"))
-		if(card.querySelector("#buttons *"))
-			card.remove();
-	
-	// new UI
 	for(const card of document.getElementsByTagName("ytd-rich-item-renderer"))
 	{
 		const time = card.querySelector("#time-status");
