@@ -6,6 +6,12 @@
 
   "description": "Hides Premieres from the YouTube subscription page.",
 
+  "browser_specific_settings": {
+    "gecko": {
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  },
+
   "icons": {
     "48": "icons/48.png",
     "96": "icons/96.png"
