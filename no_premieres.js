@@ -8,20 +8,18 @@ const observer = new MutationObserver(() => {
 	{
 		const time = card.querySelector("#time-status");
 		if(time && !time.textContent.match("[0-9]:[0-9]{2}"))
-		{
-			const row = card.closest("ytd-rich-grid-row");
-			card.remove();
-			shiftItems(row);
-		}
+			removeCard(card);
 	}
 });
 
 observer.observe(document.body, { childList: true, subtree: true });
 
 
-function shiftItems(fromRow)
+function removeCard(card)
 {
-	let current = fromRow;
+	let current = card.closest("ytd-rich-grid-row");
+	card.remove();
+	// Then shift the elements to avoid en ampty spot in the row
 	let next = current.nextElementSibling;
 	while(next.tagName === "YTD-RICH-GRID-ROW")
 	{
